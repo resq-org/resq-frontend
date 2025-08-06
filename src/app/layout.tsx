@@ -1,7 +1,17 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import { RQProvider } from "@/providers"; // ✅ 추가
+import { RQProvider, MSWProvider } from "@/providers";
 import "./globals.css";
+
+if (
+  process.env.NODE_ENV === "development" &&
+  process.env.NEXT_PUBLIC_MODE === "mock" &&
+  process.env.NEXT_RUNTIME === "nodejs"
+) {
+  const { server } = await import("@/mocks/server");
+  server.listen();
+  console.log("🔥 MSW 서버 실행됨");
+}
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,7 +38,9 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <RQProvider>{children}</RQProvider>
+        <MSWProvider>
+          <RQProvider>{children}</RQProvider>
+        </MSWProvider>
       </body>
     </html>
   );
