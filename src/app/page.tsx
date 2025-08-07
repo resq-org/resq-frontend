@@ -4,8 +4,8 @@ export default function Home() {
   return (
     <main className="p-6">
       <h1 className="mb-4 text-xl font-bold">🔍 MSW 테스트 페이지</h1>
-      <MSWClientTest />
-      <MSWServerTest />
+      {/* <MSWClientTest />
+      <MSWServerTest /> */}
       <div
         className={`
           z-50 flex items-center justify-center rounded-md border
