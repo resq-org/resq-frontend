@@ -12,6 +12,7 @@
     "prepare": "husky"
   },
   "dependencies": {
+    "@sentry/nextjs": "^10.2.0",
     "@tanstack/react-query": "^5.83.0",
     "@tanstack/react-query-devtools": "^5.83.0",
     "@vercel/speed-insights": "^1.2.0",
