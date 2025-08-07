@@ -9,8 +9,6 @@
     "start": "next start",
     "test": "jest",
     "test:watch": "jest --watch",
-    "lint": "eslint --cache --fix --ext .js,.ts,.tsx .",
-    "format": "prettier --cache --write .",
     "prepare": "husky"
   },
   "dependencies": {
@@ -61,9 +59,9 @@
     ]
   },
   "lint-staged": {
-    "*.{js,ts,tsx}": [
-      "npm run lint",
-      "npm run format"
+    "*.{ts,tsx}": [
+      "eslint --cache --fix",
+      "prettier --cache --write"
     ]
   }
 }

@@ -29,7 +29,7 @@ export default [
 
   // ✅ airbnb, next/core-web-vitals 대응
   ...compat.config({
-    extends: ['airbnb', 'next/core-web-vitals', 'next/typescript'],
+    extends: ['next/core-web-vitals', 'next/typescript'],
   }),
 
   // ✅ 플러그인 + rules 직접 정의
