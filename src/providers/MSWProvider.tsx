@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import { Suspense, use } from "react";
-import { handlers } from "@/mocks/handlers";
+import { Suspense, use } from 'react';
+import { handlers } from '@/mocks/handlers';
 
 type HotModule = {
   hot?: {
@@ -10,19 +10,19 @@ type HotModule = {
 };
 
 const mockingEnabledPromise =
-  typeof window !== "undefined"
-    ? import("@/mocks/browser").then(async (module) => {
+  typeof window !== 'undefined'
+    ? import('@/mocks/browser').then(async (module) => {
         const { worker } = module;
 
         if (
-          process.env.NODE_ENV === "production" ||
-          process.env.NEXT_PUBLIC_MODE !== "mock"
+          process.env.NODE_ENV === 'production' ||
+          process.env.NEXT_PUBLIC_MODE !== 'mock'
         ) {
           return;
         }
         await worker.start({
           onUnhandledRequest(request, print) {
-            if (request.url.includes("_next")) {
+            if (request.url.includes('_next')) {
               return;
             }
             print.warning();
@@ -35,27 +35,26 @@ const mockingEnabledPromise =
         hotModule.hot?.dispose?.(() => {
           worker.stop();
         });
-        console.log(worker.listHandlers());
       })
     : Promise.resolve();
 
-export function MSWProvider({
+const MSWProviderWrapper = ({
   children,
 }: Readonly<{
   children: React.ReactNode;
-}>) {
+}>) => {
+  use(mockingEnabledPromise);
+  return children;
+};
+
+export const MSWProvider = ({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) => {
   return (
     <Suspense fallback={null}>
       <MSWProviderWrapper>{children}</MSWProviderWrapper>
     </Suspense>
   );
-}
-
-function MSWProviderWrapper({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  use(mockingEnabledPromise);
-  return children;
-}
+};

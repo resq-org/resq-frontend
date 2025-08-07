@@ -1,8 +1,8 @@
-export const dynamic = "force-dynamic";
+export const dynamic = 'force-dynamic';
 
 export const MSWServerTest = async () => {
-  const res = await fetch("http://localhost:3000/api/hello", {
-    cache: "no-store",
+  const res = await fetch('http://localhost:3000/api/hello', {
+    cache: 'no-store',
   });
 
   const text = await res.text();
@@ -11,7 +11,7 @@ export const MSWServerTest = async () => {
   const data = JSON.parse(text);
 
   return (
-    <div className="p-4 border rounded bg-gray-50 text-sm">
+    <div className="rounded border bg-gray-50 p-4 text-sm">
       <strong>SSR MSW 테스트:</strong>
       <p>{data.message}</p>
     </div>
