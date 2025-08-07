@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import { RQProvider, MSWProvider } from '@/providers';
+import { SpeedInsights } from '@vercel/speed-insights/next';
+
 import './globals.css';
 
 if (
@@ -44,6 +46,7 @@ export default function RootLayout({
         <MSWProvider>
           <RQProvider>{children}</RQProvider>
         </MSWProvider>
+        <SpeedInsights />
       </body>
     </html>
   );

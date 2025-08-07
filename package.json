@@ -14,6 +14,7 @@
   "dependencies": {
     "@tanstack/react-query": "^5.83.0",
     "@tanstack/react-query-devtools": "^5.83.0",
+    "@vercel/speed-insights": "^1.2.0",
     "axios": "^1.11.0",
     "next": "15.4.5",
     "react": "19.1.0",
