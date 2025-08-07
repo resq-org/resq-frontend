@@ -90,6 +90,8 @@ export default [
       'import/no-extraneous-dependencies': ['error', { devDependencies: true }], // package.json에 없는 의존성 import 시 에러. devDependencies는 허용
       'jsx-a11y/label-has-associated-control': ['error', { assert: 'htmlFor' }],
       ...eslintPluginBetterTailwindcss.configs['recommended'].rules,
+      'better-tailwindcss/no-unregistered-classes': 'off',
+      'better-tailwindcss/no-custom-classname': 'off',
     },
   },
   eslintConfigPrettier,
