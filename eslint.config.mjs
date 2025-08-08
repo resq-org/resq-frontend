@@ -34,6 +34,7 @@ export default [
 
   // ✅ 플러그인 + rules 직접 정의
   {
+    files: ['src/**/*.{ts,tsx}'],
     languageOptions: {
       ecmaVersion: 'latest',
       sourceType: 'module',
@@ -60,7 +61,7 @@ export default [
       },
       'better-tailwindcss': {
         entryPoint: 'src/app/globals.css', // Tailwind v4 기준
-        tailwindConfig: 'tailwind.config.js',
+        tailwindConfig: './tailwind.config.js',
       },
     },
     rules: {
