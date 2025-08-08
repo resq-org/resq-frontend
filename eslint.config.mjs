@@ -58,6 +58,9 @@ export default [
       react: {
         version: 'detect',
       },
+      'better-tailwindcss': {
+        entryPoint: 'src/app/globals.css',
+      },
     },
     rules: {
       'react/react-in-jsx-scope': 'off', // Next.js에서는 import React from 'react' 안 해도 JSX 사용 가능 → 불필요하니까 끔
