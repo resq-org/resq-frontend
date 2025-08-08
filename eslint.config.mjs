@@ -61,7 +61,6 @@ export default [
       },
       'better-tailwindcss': {
         entryPoint: 'src/app/globals.css', // Tailwind v4 기준
-        tailwindConfig: './tailwind.config.ts',
       },
     },
     rules: {
