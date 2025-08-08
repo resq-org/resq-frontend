@@ -9,10 +9,6 @@ import tanstack from '@tanstack/eslint-plugin-query';
 // import storybook from "eslint-plugin-storybook";
 import eslintConfigPrettier from 'eslint-config-prettier';
 import { FlatCompat } from '@eslint/eslintrc';
-import path from 'node:path';
-import { fileURLToPath } from 'node:url';
-
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const compat = new FlatCompat({
   baseDirectory: import.meta.dirname,
@@ -63,7 +59,7 @@ export default [
         version: 'detect',
       },
       'better-tailwindcss': {
-        entryPoint: path.join(__dirname, 'src/app/globals.css'),
+        entryPoint: './src/app/globals.css',
       },
     },
     rules: {

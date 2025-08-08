@@ -10,7 +10,7 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "prepare": "husky",
-    "lint": "eslint src --ext .ts,.tsx --config eslint.config.mjs"
+    "lint": "eslint ./src --ext .ts,.tsx --config eslint.config.mjs"
   },
   "dependencies": {
     "@sentry/nextjs": "^10.2.0",
