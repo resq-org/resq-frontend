@@ -34,7 +34,6 @@ export default [
 
   // ✅ 플러그인 + rules 직접 정의
   {
-    files: ['src/**/*.{ts,tsx}'],
     languageOptions: {
       ecmaVersion: 'latest',
       sourceType: 'module',
