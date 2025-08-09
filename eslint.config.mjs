@@ -59,6 +59,7 @@ export default [
         version: 'detect',
       },
       'better-tailwindcss': {
+        // Tailwind v4: CSS 엔트리 지정
         entryPoint: 'src/app/globals.css',
       },
     },

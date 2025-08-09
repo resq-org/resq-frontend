@@ -16,6 +16,18 @@ export default function Home() {
           테스트 컴포넌트
         </span>
       </div>
+      <h1 className="text-2xl font-[800]">Font Debug</h1>
+
+      {/* Pretendard 적용 (전역) */}
+      <p className="text-lg">산세리프</p>
+
+      {/* Pretendard 가변 가중치 테스트 */}
+      <p className="text-lg font-[920]">산세리프</p>
+
+      {/* 기본 시스템 산세리프와 비교 */}
+      <div className="font-sans not-italic">
+        <p className="text-lg">산세리프</p>
+      </div>
     </main>
   );
 }
