@@ -12,7 +12,8 @@
     "prepare": "husky",
     "lint": "eslint ./src --ext .ts,.tsx --config eslint.config.mjs",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "chromatic": "npx chromatic --project-token=chpt_59be0c1b53b19cd"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.1",
@@ -48,6 +49,7 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "chromatic": "^13.1.3",
     "cross-env": "^10.0.0",
     "esbuild": "^0.25.8",
     "eslint": "^9",
