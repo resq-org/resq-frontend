@@ -6,7 +6,7 @@ import importPlugin from 'eslint-plugin-import'; //
 import a11y from 'eslint-plugin-jsx-a11y';
 import eslintPluginBetterTailwindcss from 'eslint-plugin-better-tailwindcss';
 import tanstack from '@tanstack/eslint-plugin-query';
-// import storybook from "eslint-plugin-storybook";
+import storybook from 'eslint-plugin-storybook';
 import eslintConfigPrettier from 'eslint-config-prettier';
 import { FlatCompat } from '@eslint/eslintrc';
 
@@ -17,14 +17,14 @@ const compat = new FlatCompat({
 export default [
   // ✅ ignorePatterns -> ignores
   {
-    ignores: ['build', 'dist', 'public', 'eslint.config.mjs'],
+    ignores: ['node_modules', 'build', 'dist', 'public', '.next', 'coverage'],
   },
 
   // ✅ 기본 recommended 세트
   js.configs.recommended,
   react.configs.flat.recommended,
   ...tseslint.configs.recommended,
-  // ...storybook.configs["flat/recommended"],
+  ...storybook.configs['flat/recommended'],
   ...tanstack.configs['flat/recommended'],
 
   // ✅ airbnb, next/core-web-vitals 대응
@@ -84,6 +84,7 @@ export default [
           tsx: 'never',
         },
       ], // import 시 .ts, .tsx 확장자 붙이지 않도록 강제. node_modules(import 패키지)는 무시
+      'import/no-anonymous-default-export': 'off',
       'import/prefer-default-export': 'off', // 단일 export일 때 default 쓰라고 강요하는 규칙 → 요즘 트렌드는 default 안 쓰는 쪽이라 꺼둠
       'import/no-cycle': 'off', // 순환 참조 허용. 단방향 의존이 이상적이지만 현실적으로 막기 어려울 때가 많음
       'no-console': ['error', { allow: ['warn', 'error'] }], // console.log 금지하고 console.warn, console.error만 허용 (디버깅 로그 줄이기)
