@@ -1,9 +1,12 @@
-import { MSWClientTest, MSWServerTest } from '@/components';
+// import { MSWClientTest, MSWServerTest } from '@/components';
+import Logo from '@/assets/resQ.svg';
 
 export default function Home() {
   return (
     <main className="p-6">
-      <h1 className="mb-4 text-xl font-bold">🔍 MSW 테스트 페이지</h1>
+      <header className="mb-4 flex flex-row gap-4 text-xl font-bold">
+        <Logo className="h-8 w-8" /> MSW 테스트 페이지
+      </header>
       {/* <MSWClientTest />
       <MSWServerTest /> */}
       <div
