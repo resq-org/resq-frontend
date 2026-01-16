@@ -60,7 +60,7 @@ export default [
       },
       'better-tailwindcss': {
         // Tailwind v4: CSS 엔트리 지정
-        entryPoint: 'src/app/globals.css',
+        entryPoint: 'src/globals.css',
       },
     },
     rules: {
