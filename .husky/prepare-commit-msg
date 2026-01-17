@@ -1,0 +1,1 @@
+cat .github/commit_message_template.txt > "$1"
