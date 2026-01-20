@@ -93,6 +93,7 @@ export default [
       ...eslintPluginBetterTailwindcss.configs['recommended'].rules,
       'better-tailwindcss/no-unregistered-classes': 'off',
       'better-tailwindcss/no-custom-classname': 'off',
+      'better-tailwindcss/enforce-consistent-line-wrapping': 'off',
     },
   },
   eslintConfigPrettier,
